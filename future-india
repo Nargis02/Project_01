@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future India - Vision 2050</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px cyan;
+        }
+        .section {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .section h2 {
+            color: cyan;
+            margin-bottom: 10px;
+        }
+        .content {
+            display: none;
+            margin-top: 10px;
+        }
+        .content img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: transparent;
+            border: 2px solid cyan;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back-button:hover {
+            background: cyan;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Future India - Vision 2050</h1>
+        
+        <div class="section" onclick="toggleContent('tech-content')">
+            <h2>Advanced Technologies</h2>
+            <div class="content" id="tech-content">
+                <p>India will lead in AI-driven automation, smart cities, and quantum computing. Innovations in space exploration and biotechnology will transform the nation.</p>
+                <img src="https://wonderfulengineering.com/wp-content/uploads/2017/07/maxresdefault-5.jpg" alt="Advanced Technologies">
+            </div>
+        </div>
+        
+        <div class="section" onclick="toggleContent('eco-content')">
+            <h2>Balanced Ecosystem</h2>
+            <div class="content" id="eco-content">
+                <p>Sustainable energy solutions, electric vehicles, and green architecture will reduce carbon footprints. Smart agriculture will ensure food security.</p>
+                <img src="https://upsctree.com/wp-content/uploads/2017/05/mangroove.png" alt="Balanced Ecosystem">
+            </div>
+        </div>
+        
+        <div class="section" onclick="toggleContent('military-content')">
+            <h2>Advanced Military</h2>
+            <div class="content" id="military-content">
+                <p>AI-powered defense systems, autonomous drones, and hypersonic weaponry will enhance national security, making India a global military power.</p>
+                <img src="https://images.firstpost.com/wp-content/uploads/2022/10/defence2.jpg" alt="Advanced Military">
+            </div>
+        </div>
+        
+        <button class="back-button" onclick="goBack()">Back to Home</button>
+    </div>
+    
+    <script>
+        function goBack() {
+            window.location.href = "0078.html";
+        }
+        
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
