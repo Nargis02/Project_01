@@ -1,0 +1,173 @@
+<!0078.html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Animated Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #000;
+            overflow: hidden;
+            color: #fff;
+        }
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+        }
+        
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glowing-text {
+            font-size: 3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 15px #0ff; }
+            100% { text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff; }
+        }
+        
+        .subtext {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+        
+        .glow-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: transparent;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .glow-button:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 0 15px #0ff;
+        }
+        
+        .glow-button:active {
+            transform: scale(0.9);
+        }
+        
+        /* Background Music */
+        audio {
+            display: none;
+        }
+        
+        /* Floating Animation */
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Futuristic Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+        
+        .loading-text {
+            font-size: 2rem;
+            color: #0ff;
+            text-transform: uppercase;
+            animation: loadingBlink 1s infinite;
+        }
+        
+        @keyframes loadingBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body>
+    <audio id="bg-music" loop>
+        <source src="futuristic-music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-text">Loading...</div>
+    </div>
+    
+    <div class="hero">
+        <div class="overlay"></div>
+        <div class="particles" id="particles"></div>
+        <div class="content floating">
+            <h1 class="glowing-text" id="typing-text"></h1>
+            <p class="subtext">Innovate. Create. Inspire.</p>
+            <button class="glow-button" onclick="redirectToFuturePage()">Explore</button>
+        </div>
+    </div>
+    
+    <script>
+        function redirectToFuturePage() {
+            window.location.href = "future-india.html";
+        }
+        
+        // Typing Animation
+        const text = "Welcome to the Future";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typing-text").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById("loading-screen").style.display = "none";
+                typeEffect();
+            }, 2000);
+        };
+    </script>
+</body>
+</html>
